@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Siber101 Deneme Web Sitesine Hoşgeldiniz!</h1>
-    <form method="GET" action="arama">
+    <form method="GET" action="">
         <input type="text" name="q" placeholder="Arama yap..." />
         <button type="submit">Ara</button>
     </form>
@@ -20,6 +20,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const searchQuery = urlParams.get('q');
         if (searchQuery) {
+            // XSS Açığı: Kullanıcıdan gelen veriyi doğrudan HTML'e yazmak
             document.getElementById('sonuc').innerHTML = 'Arama Sonucu: ' + searchQuery;
         }
     </script>
