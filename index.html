@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber101 Deneme</title>
+</head>
+<body>
+    <h1>Siber101 Deneme Web Sitesine Hoşgeldiniz!</h1>
+    <form method="GET" action="arama">
+        <input type="text" name="q" placeholder="Arama yap..." />
+        <button type="submit">Ara</button>
+    </form>
+    
+    <div id="sonuc">
+        <!-- Sonuçlar buraya gelecek -->
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q');
+        if (searchQuery) {
+            document.getElementById('sonuc').innerHTML = 'Arama Sonucu: ' + searchQuery;
+        }
+    </script>
+</body>
+</html>
